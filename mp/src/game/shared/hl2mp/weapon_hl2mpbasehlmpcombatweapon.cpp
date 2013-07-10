@@ -261,9 +261,9 @@ float CBaseHL2MPCombatWeapon::CalcViewmodelBob( void )
 	//FIXME: This maximum speed value must come from the server.
 	//		 MaxSpeed() is not sufficient for dealing with sprinting - jdw
 
-	speed = clamp( speed, -320, 320 );
+	speed = clamp( speed, -1000, 1000 );
 
-	float bob_offset = RemapVal( speed, 0, 320, 0.0f, 1.0f );
+	float bob_offset = RemapVal( speed, 0, 1000, 0.0f, 1.0f );
 	
 	bobtime += ( gpGlobals->curtime - lastbobtime ) * bob_offset;
 	lastbobtime = gpGlobals->curtime;
